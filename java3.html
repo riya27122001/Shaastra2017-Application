@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Display</title>
+	<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script type="text/javascript" src="angular.min.js"></script>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  	<script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+</head>
+<body>
+	<div ng-app="FirstApplication">
+		<div ng-controller="sampleController">
+	<!-- Input box to enter three strings -->	
+			<input ng-model="inputValue" type="text">
+			<button type="button" class="btn btn-primary" id="submit" ng-click="arr()" value="">
+	  			Enter
+			</button>
+	<!-- To display three string consecutively -->		
+			<div id="disp"></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("FirstApplication",[]);
+		var arr = [];//To store the strings entered
+		var i=0;
+		var j=0;
+		app.controller("sampleController",function ($scope) {
+			$scope.arr = function () {
+			//Storing strings	
+				if((i>=0)&&(i<2))
+				{
+					arr[i] = $scope.inputValue;
+					++i;
+					$scope.inputValue='';//To clear input box
+					console.log('fn1');
+				}
+			//To displaying strings immediately after third string is entered	
+				else if(i==2)
+				{
+						arr[i] = $scope.inputValue;
+						$scope.inputValue='';//To clear input box
+						console.log('fn1');
+						var myvar = setInterval(function () {
+							if((j>=0)&&(j<2))
+							{
+								document.getElementById("disp").innerHTML = arr[j];
+								console.log('fn');
+								j++;
+							}
+							else if(j==2)
+							{
+								document.getElementById("disp").innerHTML = arr[j];
+								j=0;
+							}
+						},3000);
+						++i;
+				}
+			//Displaying strings using setInterval function every three seconds			
+				else if(i>=3)
+				{
+						var myvar = setInterval(function () {
+							if((j>=0)&&(j<2))
+							{
+								document.getElementById("disp").innerHTML = arr[j];
+								console.log('fn');
+								j++;
+							}
+							else if(j==2)
+							{
+								document.getElementById("disp").innerHTML = arr[j];
+								j=0;
+							}
+						},3000);
+				}
+			};	
+			
+		});
+	//To disable submit button after three strings are entered	
+	$(function () {	
+			$('#submit').click(function () {
+				if (i==3) 
+					$('#submit').addClass("disabled");
+			});
+	});
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,8 @@
+1. The Shaastra website might be too heavy on slow networks. An alternative lite version of Shaastra can also be made so that the user may view just the essential information and skip the formatting and animations.
+Links and other elements can be indexed with key tags and search bar can be provided so that the users unfamiliar with presise event names can search and find his/her way easily.
+Brief information about links can be provided while hovering over them.
+The visual impact can be improved by adding more self explanatory icons and glyphicons.
+
+2.A search bar indexing links with key tags could be included.
+An alternative lite version of the Shaastra website could be made.
+The visual impact can be improved by adding more imagery and reducing the text clutter.

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shaastra 2016 | IIT Madras Techfest | 2016</title>
+	<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script type="text/javascript" src="angular.min.js"></script>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow">
+	<style type="text/css">
+	/*General styling*/
+		* {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+	/*Body fonts*/	
+		body {
+		    padding: 0!important;
+		    height: 100%;
+		    width: 100%;
+    		margin: 0;
+    		font: 14px "Montserrat", sans-serif;
+
+		    
+		    line-height: 1.42857143;
+		    color: #333;
+		    background-color: #E5EEFB;
+		    margin: 0;
+		    display: block;
+		}
+	/*html fonts*/	
+		html{
+			
+            -webkit-tap-highlight-color: transparent;
+            font: 10px "Montserrat", sans-serif;
+		    -webkit-text-size-adjust: 100%;
+		    -ms-text-size-adjust: 100%;
+		}
+	/*Div styling*/
+		div {
+			display: block;
+		}
+	/*Container styling*/	
+		@media (min-width: 1200px)
+			.container {
+    			width: 1170px;
+			}
+		@media (min-width: 992px)
+			.container {
+    			width: 970px;
+			}
+		.container, .container-fluid {
+    		padding-right: 15px;
+    		padding-left: 15px;
+    		margin-right: auto;
+    		margin-left: auto;
+		}
+	/*Nav bar background and font styling	*/
+		.top-nav-container {
+			position: fixed;
+			background-color: #173e43;
+			width: 100%;
+			z-index: 250;
+			font-family: 'PT Sans Narrow';
+			font-style: normal;
+			font-size: 1.3em;
+			
+		}
+	/*nav bar width*/
+		.nav-bar1{
+			width: 100%;
+		}
+	/*Nav bar text styling*/	
+		.home-top-nav1{
+			font-weight: bolder;
+			font-size: 1.1em;
+			padding-left: 3%;
+			padding-top: 1.5%;
+			padding-bottom: 1.5%;
+			text-align: center;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: row;
+			flex-direction: row;
+			-webkit-flex-wrap: nowrap;
+			flex-wrap: nowrap; 
+			-webkit-justify-content: space-around;
+			justify-content: space-around;
+			-webkit-align-items: center;
+			align-items: center;
+			-webkit-align-content: space-around;
+			align-content: space-around;
+			height: auto!important;
+		}
+	/*Row styling*/
+		.row{
+			margin-right: -15px;
+			margin-left: -15px;
+		}
+		
+	/*Side menu display icon styling	*/
+		#omnbars {
+			left: 10px;
+			width: 25px;
+			height: 33px;
+			position: absolute;
+			cursor: pointer;
+		}
+		.inblock{
+			display: inline-block;
+		}
+		#bar1 {
+		    top: 0;
+		    opacity: 1;
+		    -webkit-transition: top .3s
+				cubic-bezier(0.22, 0.61, 0.36, 1);
+		    transition: top .3s
+				cubic-bezier(0.22, 0.61, 0.36, 1);
+		}
+		#bar1:hover{
+			top: -5px;
+		}
+		#bar1, #bar2, #bar3, #bar4, #bar5, #bar6 {
+		    background-color: #fff;
+		}
+		.bars {
+		    z-index: 300;
+		    display: block;
+		    width: 25px;
+		    height: 3px;
+		    background-color: #000;
+		    	
+			position: relative;
+			
+
+			        
+		}
+		
+		
+		#bar2 {
+		    top: 5px;
+		    opacity: 1;
+		    -webkit-transition: top .3s
+				cubic-bezier(0.22, 0.61, 0.36, 1);
+		    transition: top .3s
+				cubic-bezier(0.22, 0.61, 0.36, 1);
+		}
+		#bar2:hover{
+			top: 0px;
+		}
+		#bar3 {
+		    top: 10px;
+		    opacity: 1;
+		    -webkit-transition: top .3s
+				cubic-bezier(0.22, 0.61, 0.36, 1);
+		    transition: top .3s
+				cubic-bezier(0.22, 0.61, 0.36, 1);
+		}
+		#bar3:hover{
+			top: 5px;
+		}
+		#bar4 {
+		    top: 15px;
+		    opacity: 0;
+		    -webkit-transition: top .3s
+				cubic-bezier(0.22, 0.61, 0.36, 1);
+		    transition: top .3s
+				cubic-bezier(0.22, 0.61, 0.36, 1);
+		}
+		#bar4:hover{
+			top: 10px;
+		}
+	/*Nav item padding*/	
+		.nav-item-new {
+		    padding-left: 0;
+		    padding-right: 0;
+		}
+	/*Link styling*/	
+		.nav-item-new:hover a {
+		    color: #e1e1e1;
+		}
+		.nav-item-new>a:hover, a:link{
+			text-decoration: none;
+		}
+		.nav-item-new>a{
+			color: #fff;
+			font-family: 'PT Sans Narrow';
+			font-style: normal;
+			
+		}
+		a, a:active, a:focus, a:hover {
+		    outline: 0;
+		    font-family: 'PT Sans Narrow';
+		    font-style: normal;
+		    
+		}
+		a:focus {
+		    outline: dotted thin;
+		    outline: -webkit-focus-ring-color auto 5px;
+		    outline-offset: -2px;
+		}
+		
+
+	</style>
+</head>
+<body ng-app="shaastra2016App" id="body" class="ng-scope" style="overflow-x: hidden;">
+<!-- Navbar container -->
+	<div class="container top-nav-container ng-scope" id="someDiv" ng-controller="MainController">
+<!-- Side menu display icon -->	
+		<div id="hamburger-menu">
+			<div id="omnbars" class="o inblock" style="top: 20px;">
+				<span class="bars" id="bar1"></span>
+				<span class="bars" id="bar2"></span>
+				<span class="bars" id="bar3"></span>
+				<span class="bars" id="bar4"></span>
+			</div>
+			
+		</div>
+<!-- Sub-headings of the navbar -->		
+		<div class="row nav-bar1 home-top-nav1">
+			<div id="top-nav-events" class="nav-item-new">
+				<a href="#!" style="font: 20px "Montserrat", sans-serif;">EVENTS</a>
+			</div>
+			<div id="top-nav-workshops" class="nav-item-new">
+				<a href="#!" style="font-family: 'PT Sans Narrow'; font-style: normal;">WORKSHOPS</a>
+			</div>
+			<div id="top-nav-shows" class="nav-item-new">
+				<a href="#!">SHOWS AND EXHIBITIONS</a>
+			</div>
+			<div id="top-nav-preShaastra" class="nav-item-new">
+				<a href="#!">PRE-SHAASTRA ACTIVITIES</a>
+			</div>
+			<div id="top-nav-preShaastra" class="nav-item-new">
+				<a href="#!">LECTURE SERIES</a>
+			</div>
+			<div id="top-nav-summit" class="nav-item-new" style="font: 20px "Montserrat", sans-serif;">
+				<a href="#!">MAKER SUMMIT</a>
+			</div>
+			<div id="top-nav-social" class="nav-item-new">
+				<a href="#!">PLEDGE-A-BOOK</a>
+			</div>
+		</div>
+		
+	</div>
+<!-- To resize the navbar according to screen size -->	
+	<script type="text/javascript">
+		$(document).ready(function(){
+		resizeDiv();
+		});
+
+		window.onresize = function(event) {
+		resizeDiv();
+		}
+
+		function resizeDiv() {
+		vph = $(window).height();
+		$(‘#somediv’).css({‘height’: (Number(vph)/10).toString() + ‘px’});
+		}
+	</script>
+	
+
+</body>
+</html>

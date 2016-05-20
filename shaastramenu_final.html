@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shaastra 2016 | IIT Madras Techfest | 2016</title>
+	<link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script type="text/javascript" src="angular.min.js"></script>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow">
+	<style type="text/css">
+	/*Body formatting*/
+		body {
+		    padding: 0;
+		    height: 100%;
+		    width: 100%;
+    		margin: 0;
+    		font: 14px "Montserrat", sans-serif;
+
+		    
+		    line-height: 1.42857143;
+		    color: #333;
+		    background-color: #E5EEFB;
+		    margin: 0;
+		    display: block;
+		}
+	/*Div formatting*/	
+		div{
+			display: block;
+		}
+	/*All elements formatting*/	
+		*{
+			box-sizing: border-box;
+		}
+	/*Menu formatting*/	
+		.menu {
+		    max-width: 100%;
+		    color: #fff;
+		    display: inline-block;
+		    background-color: #173e43;
+		    padding: 0!important;
+		    /*max-width: 0;*/
+		    width: 220px;
+		    transition: all .15s ease;
+		}
+
+		#menuscroll, .menu, .mn-list, body, html {
+		    height: 100%;
+		}
+		.menu, body {
+		    overflow: hidden;
+		    height: 100%;
+		}
+		#menuscroll {
+		    background-color: #173e43!important;
+		    display: block;
+		    overflow-y: auto;
+		    height: 100%;
+		}
+	/*Hyperlink formatting*/	
+		#scroll a, .nav-item-new>a:hover, .schedule a:hover, a:active, a:link, a:visited, a[event-nav-hyperlink] {
+		    text-decoration: none;
+		}
+		.menu a {
+		    display: block;
+		    padding: .4em 0 .4em .2em;
+		    
+		    font: 15px "Montserrat", sans-serif;
+		    font-variant: small-caps;
+		    font-weight: 100;
+		}
+		.account a, .menu a {
+		    color: #fff!important;
+		    text-decoration: none!important;
+		}
+		a, a:active, a:focus, a:hover {
+		    outline: 0;
+		}
+		a {
+		    background-color: transparent;
+		}
+		a:-webkit-any-link {
+		    color: -webkit-link;
+		    text-decoration: underline;
+		    cursor: auto;
+		}
+	/*Dice formatting*/	
+		.side-menu-dice {
+		    width: 130px;
+		    margin-left: 19%;
+		    margin-top: 15%;
+		}
+		.img-responsive {
+		    display: block;
+		    max-width: 100%;
+		    height: auto;
+		}
+		img {
+		    vertical-align: middle;
+		    border: 0;
+		}
+		::-webkit-scrollbar {
+		    width: .5em;
+		}
+		::-webkit-scrollbar-thumb {
+		    background: #000;
+		}
+	/*List formatting*/		
+		.menu ul {
+		    padding: 0;
+		    margin: 0;
+		    font-size: 1.3em;
+		}
+		.menu ul {
+		    list-style-type: none;
+		}
+		.mn-list {
+		    position: relative;
+		    width: 100%;
+		    display: table;
+		    padding: 0!important;
+		    z-index: 300;
+		    background-color: #173e43;
+		    height: 100%;
+		}
+		ul {
+		    margin-bottom: 10px;
+		    margin-top: 0;
+		}
+		ul, menu, dir {
+		    display: block;
+		    list-style-type: disc;
+		    -webkit-margin-before: 1em;
+		    -webkit-margin-after: 1em;
+		    -webkit-margin-start: 0px;
+		    -webkit-margin-end: 0px;
+		    -webkit-padding-start: 40px;
+		}
+		.menu ul {
+		    padding: 0;
+		    margin: 0;
+		    font-size: 1.3em;
+		    list-style-type: none;
+		}
+		
+		.hover1{
+			height: 40px;
+
+		}
+		.hover1:focus, .hover1:hover {
+		    color: #23527c;
+		    text-decoration: underline;
+		    background-color: rgb(23, 48, 51);
+		}
+	/*Social media glyphicons formatting*/	
+		footer {
+		    bottom: 0;
+		    left: -1%;
+		    position: absolute;
+		    display: block;
+		}
+		
+		.mn-social {
+		    display: table-row;
+		    vertical-align: bottom;
+		    height: 1.2em;
+		}
+		ul{
+			margin-top: 10px;
+			margin-bottom: 0;
+		}
+		.menu li{
+			cursor: pointer;
+		}
+		.social {
+		    display: inline-block;
+		    display: -moz-inline-stack;
+		}
+		li {
+		    display: list-item;
+		    text-align: -webkit-match-parent;
+		}
+		ul li a i {
+		    display: table-row;
+		}
+		i {
+		    font-style: italic;
+		}
+		.mn-social a {
+		    display: table;
+		    font-size: 20px;
+		    margin-left: 3px;
+		    margin-right: 3px;
+		    padding: 0;
+		    -webkit-transition: all .3s;
+		    transition: all .3s;
+
+		    text-align: center;
+		}
+		a:link{
+			text-decoration: none;
+		}
+		.fa-facebook {
+			padding-top: 5px;
+		    color: #3b5998;
+		    background: #fff;
+		    width: 30px;
+		    height: 27px;
+		    border-radius: 50%;
+		    -webkit-transition: color .3s;
+		    transition: color .3s;
+		    -webkit-transition: background-color .3s;
+		    transition: background-color .3s;
+		    
+		}
+	/*Color swapping transition for facebook*/	
+		.fa-facebook:hover {
+		    background-color: #3b5998;
+		    color: #ffffff;
+		}
+		.fa-twitter {
+		    color: #00aced;
+		    padding-top: 5px;
+		    background: #fff;
+		    width: 30px;
+		    height: 27px;
+		    border-radius: 50%;
+		    -webkit-transition: color .3s;
+		    transition: color .3s;
+		    -webkit-transition: background-color .3s;
+		    transition: background-color .3s;
+		}
+	/*Color swapping transition for twitter*/	
+		.fa-twitter:hover {
+		    background-color: #00aced;
+		    color: #ffffff;
+		}
+		.fa-youtube-play {
+		    color: #dd4b39;
+		    padding-top: 3px;
+		    background: #fff;
+		    width: 30px;
+		    height: 27px;
+		    border-radius: 50%;
+		    -webkit-transition: color .3s;
+		    transition: color .3s;
+		    -webkit-transition: background-color .3s;
+		    transition: background-color .3s;
+		}
+	/*Color swapping transition for youtube*/	
+		.fa-youtube-play:hover {
+		    background-color: #dd4b39;
+		    color: #ffffff;
+		}
+		.fa-android {
+		    color: #689f38;
+		    padding-top: 3px;
+		    background: #fff;
+		    width: 30px;
+		    height: 27px;
+		    border-radius: 50%;
+		    -webkit-transition: color .3s;
+		    transition: color .3s;
+		    -webkit-transition: background-color .3s;
+		    transition: background-color .3s;
+		}
+	/*Color swapping transition for android*/	
+		.fa-android:hover {
+		    background-color: #689f38;
+		    color: #ffffff;
+		}
+		.fa {
+		    font: normal normal normal 14px/1 FontAwesome;
+		    font-size: inherit;
+		    text-rendering: auto;
+		    -webkit-font-smoothing: antialiased;
+		    font-smoothing: antialiased;
+		    display: inline-block;
+		}
+		.fa, .glyphicon {
+		    -moz-osx-font-smoothing: grayscale;
+		    -webkit-font-smoothing: grayscale;
+		    font-smoothing: grayscale;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="menu ng-scope" style="position: fixed; width: 220px; z-index: 350; padding-bottom: 0%" ng-controller="MainController">
+	<!-- Shaastra dice -->
+		<a href="#!">
+			<img src="shaastradice.png" class="img-responsive side-menu-dice" alt="Shaastra">
+		</a>
+	<!-- Menu list -->	
+		<ul class="mn-list">
+			<span id="menuscroll">
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">HOME</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">PRE-SHAASTRA</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">EVENTS</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">WORKSHOPS</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">LECTURE SERIES</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">MAKER SUMMIT</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">SHOWS AND EXHIBITIONS</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">SPONSORS</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">PLEDGE-A-BOOK</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">ABOUT US</a>
+				</li>
+				<li>
+					<a href="#!" style="padding-left: 10px; padding-top: 10px;" class="hover1">CONTACT US</a>
+				</li>	
+			</span>
+		</ul>
+	<!-- Footer for social media glyphicons -->	
+		<footer style="position: absolute; top: 650px; z-index: 350; width: 100%; padding: 0% 2% 0% 36px;">
+			<ul class="mn-social">
+	<!-- FontAwesome Facebook glyphicon -->		
+				<li class="social">
+					<a id="fb" target="_blank" href="#!">
+						<i class="fa fa-facebook">
+							<span>
+							
+							</span>
+						</i>	
+					</a>
+				</li>
+	<!--FontAwesome Twitter glyphicon -->			
+				<li class="social">
+					<a id="tw" target="_blank" href="#!">
+						<i class="fa fa-twitter">
+							<span></span>
+						</i>	
+					</a>
+				</li>
+	<!--FontAwesome YoutTube glyphicon -->			
+				<li class="social">
+					<a id="you" target="_blank" href="#!">
+						<i class="fa fa-youtube-play">
+							<span></span>
+						</i>	
+					</a>
+				</li>
+	<!--FontAwesome Android glyphicon -->			
+				<li class="social">
+					<a id="android-fontawsome" target="_blank" href="#!">
+						<i class="fa fa-android">
+							<span></span>
+						</i>	
+					</a>
+				</li>
+			</ul>
+		</footer>
+	</div>
+</body>
+</html>
